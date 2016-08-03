@@ -23,9 +23,10 @@
     <input type="button" id="Register" />
     <script>
     $("#Register").click(function(){
+      var json = "{ Email :" + $('#Email').value + ", Password :"  + $('#Password').value + ", ConfirmPassword :" +  + $('#ConfirmPassword').value + "}";
       $.ajax(
         type: "POST",
-        data: "{ Email :" + $('#Email').value + ", Password :"  + $('#Password').value + ", ConfirmPassword :" +  + $('#ConfirmPassword').value + "}",
+        data: json,
         dataType: "jsonp",
         url: "http://10.2.20.63:19633/api/Account/Register"
         )
