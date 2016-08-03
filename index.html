@@ -14,10 +14,22 @@
         height: 100%;
       }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="map"></div>
+    <input type="text" id="Email" />
+    <input type="text" id="Password" />
+    <input type="text" id="ConfirmPassword" />
+    <input type="button" id="Register" />
     <script>
+    $("#Register").click(function(){
+      $.ajax(
+        type: "POST",
+        data: "{ Email :" + $('#Email').value + ", Password :"  + $('#Password').value + ", ConfirmPassword :" +  + $('#ConfirmPassword').value + "}",
+        dataType: "jsonp",
+        url: "http://10.2.20.63:19633/api/Account/Register"
+        )
+    });
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
