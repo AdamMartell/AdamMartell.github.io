@@ -24,12 +24,12 @@
     <script>
     $("#Register").click(function(){
       var json = "{ Email :" + $('#Email').value + ", Password :"  + $('#Password').value + ", ConfirmPassword :" +  + $('#ConfirmPassword').value + "}";
-      $.ajax(
+      $.ajax({
         type: "POST",
         data: json,
         dataType: "jsonp",
         url: "http://10.2.20.63:19633/api/Account/Register"
-        )
+        })
     });
       var map;
       function initMap() {
